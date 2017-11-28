@@ -1,0 +1,352 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.5em;
+  color: #fff;
+}
+
+h1, h2, h3 {
+  font-family: 'Spectral SC', serif;
+  font-family: 'Indie Flower', cursive;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/*header*/
+
+#header {
+  height: 80px;
+  color: #000;
+  background-color: #fff;
+}
+
+@media(max-width: 431px) {
+  #header h1 {
+    font-size: 30px;
+  }
+  #footer h1 {
+    font-size: 30px;
+  }
+}
+
+/*main page*/
+
+#container {
+  padding-top: 70px;
+  padding-bottom: 70px;
+  height: auto;
+  min-height: calc(100% - 150px);
+  background-image: url("../images/bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-page h2 {
+  text-align: center;
+  color: #fff;
+  margin-top: 160px;
+  margin-bottom: 10px;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.option1, .option2 {
+  background-image: url("../images/vinyl.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  width: 90px;
+  height: 90px;
+}
+
+.option1 {
+  margin-right: 10px;
+}
+
+.option2 {
+  margin-left: 10px;
+}
+
+.option1 h3, .option2 h3 {
+  color: #000;
+  padding: 0;
+  margin: 10px 5px 10px 5px;
+  cursor: pointer;
+  font-size: 23px;
+}
+
+.option1 h3 {
+  margin: 20px 5px 20px 5px;
+}
+
+/*end main page */
+
+/*footer*/
+
+#footer {
+  color: #000;
+  background-color: #fff;
+  height: 70px;
+}
+
+/*end footer*/
+
+/*option1 option2*/
+
+.clearfix, .clearfix2 {
+  clear: both;
+}
+
+.option1-page, .option2-page {
+  display: none;
+  width: 330px;
+  min-height: 400px;
+  background: #fff;
+  overflow: auto;
+  margin: 60px auto;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  border: 2px solid #000;
+}
+
+#audio-image, #audio-image2 {
+  position: relative;
+  overflow: hidden;
+  height: 120px;
+  margin-bottom: 10px;
+}
+
+#audio-info, #audio-info2 {
+  text-align: center;
+  color: #000;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+#audio-info .artist, #audio-info2 .artist2 {
+  font-weight: bold;
+}
+
+.cover, .cover2 {
+  width: 100%;
+  z-index: 1;
+}
+
+.vol, .vol2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.volume, .volume2 {
+  height: 27px;
+  width: 30px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  position: relative;
+}
+
+input#volume, input#volume2 {
+  width: 80%;
+  margin-right: 15px;
+  -webkit-appearance: none !important;
+  background: #ccc;
+  height: 1px;
+  margin-bottom: 20px;
+  margin-top: 12px;
+}
+
+input#volume::-webkit-slider-thumb, input#volume2::-webkit-slider-thumb {
+  -webkit-appearance: none !important;
+  background: url(../images/knob.png) no-repeat;
+  height: 12px;
+  width: 12px;
+}
+
+#buttons, #buttons2 {
+  width: 90%;
+  display: block;
+  margin: 15px auto;
+  overflow: auto;
+}
+
+button#play, button#play2 {
+  width: 70px;
+  height: 70px;
+  background: url(../images/play2.png) no-repeat;
+  float: left;
+  margin-left: 3px;
+}
+
+button#pause, button#pause2 {
+  width: 70px;
+  height: 70px;
+  background: url(../images/pause2.png) no-repeat;
+  float: left;
+  margin-left: 3px;
+}
+
+button#stop, button#stop2 {
+  width: 70px;
+  height: 70px;
+  background: url(../images/stop2.png) no-repeat;
+  float: left;
+  margin-left: 3px;
+}
+
+button#prev, button#prev2 {
+  width: 70px;
+  height: 70px;
+  background: url(../images/prev2.png) no-repeat;
+  float: left;
+  margin-left: 3px;
+}
+
+button#next, button#next2 {
+  width: 70px;
+  height: 70px;
+  background: url(../images/next2.png) no-repeat;
+  float: left;
+  margin-left: 3px;
+}
+
+#playlist, #playlist2 {
+  list-style-type: none;
+  padding: 10px;
+}
+
+#playlist li, #playlist2 li {
+  cursor: pointer;
+  color: #000;
+}
+
+#tracker, #tracker2 {
+  position: relative;
+  width: 100%;
+}
+
+#playlist li.active, #playlist2 li.active {
+  font-weight: bold;
+  padding: 3px;
+  background: #000;
+  color: #fff;
+}
+
+#progressBar, #progressBar2 {
+  position: relative;
+  width: 80%;
+  margin-left: 2%;
+  margin-bottom: 20px;
+  margin-top: 9px;
+  height: 10px;
+  background: url(../images/progress_bg.png) no-repeat;
+  float: left;
+}
+
+#progress, #progress2 {
+  background: url(../images/progress.png) no-repeat;
+  height: 10px;
+  display: inline-block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#duration, #duration2 {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  padding: 4px 8px;
+  background: #000;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.returnButton, .returnButton2 {
+  transition: all 300ms ease-in-out;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  opacity: 1;
+  width: 100px;
+  height: 50px;
+  margin-top: 40px;
+  display: none;
+  border: none;
+  background-color: #fff !important;
+  color: #000;
+}
+
+.returnButton:hover, .returnButton2:hover {
+  color: #fff !important;
+  background-color: #4c4c4c !important;
+}
+
+@media(max-width:358px) {
+  .option1-page, .option2-page {
+    width: 100%;
+  }
+  input#volume, input#volume2 {
+    width: 80%;
+    margin-left: 10px;
+  }
+  #buttons, #buttons2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  button#play, button#play2 {
+    width: 50px;
+    height: 50px;
+    background: url(../images/play3.png) no-repeat;
+  }
+  button#pause, button#pause2 {
+    width: 50px;
+    height: 50px;
+    background: url(../images/pause3.png) no-repeat;
+  }
+  button#stop, button#stop2 {
+    width: 50px;
+    height: 50px;
+    background: url(../images/stop3.png) no-repeat;
+  }
+  button#prev, button#prev2 {
+    width: 50px;
+    height: 50px;
+    background: url(../images/prev3.png) no-repeat;
+  }
+  button#next, button#next2 {
+    width: 50px;
+    height: 50px;
+    background: url(../images/next3.png) no-repeat;
+  }
+  #progressBar, #progressBar2 {
+    background: url(../images/progress_bg2.png) no-repeat;
+    height: 8px;
+  }
+  #progress, #progress2 {
+    background: url(../images/progress2.png) no-repeat;
+    height: 8px;
+  }
+}

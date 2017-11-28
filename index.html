@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audio Player App</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Spectral+SC" rel="stylesheet">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/app.js"></script>
+</head>
+
+<body>
+  <!--header-->
+  <div id="header">
+    <div class="container-fluid">
+      <div class="row">
+        <h1 class="text-center">Music App</h1>
+      </div>
+    </div>
+  </div>
+  <!--end header-->
+
+  <!--main page-->
+  <div id="container">
+    <div class="container">
+      <div clas="content-container">
+        <div class="row">
+          <div class="col-lg-12 main-page">
+            <h2> Choose your record!</h2><br>
+          </div>
+        </div>
+        <div class="options">
+          <div class="option1  main-page">
+            <h3>Scott Holmes</h3>
+          </div>
+          <div class="option2 main-page">
+            <h3>Lemon Yellow Hayes</h3>
+          </div>
+        </div>
+        <!--end main page-->
+
+        <!--option1-->
+        <div class="option1-page">
+          <div id="audio-image">
+            <img class="cover" />
+          </div>
+          <div id="audio-player">
+            <div id="audio-info">
+              <span class="artist"></span> - <span class="title"></span>
+            </div>
+            <div class="vol">
+              <img src="images/volume.jpg" class="volume">
+              <input id="volume" type="range" min="0" max="10" value="5" />
+            </div>
+            <br>
+            <div id="buttons">
+              <span>
+			          <button id="prev"></button>
+          			<button id="play"></button>
+          			<button id="pause"></button>
+          			<button id="stop"></button>
+          			<button id="next"></button>
+			        </span>
+            </div>
+            <div class="clearfix"></div>
+            <div id="tracker">
+              <div id="progressBar">
+                <span id="progress"></span>
+              </div>
+              <span id="duration"></span>
+            </div>
+            <div class="clearfix"></div>
+            <ul id="playlist">
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <button type="button" class="btn btn-danger returnButton center-block">Return</button>
+          </div>
+        </div>
+
+        <!--end option1-->
+
+        <!--end option2-->
+        <div class="option2-page">
+          <div id="audio-image2">
+            <img class="cover2" />
+          </div>
+          <div id="audio-player2">
+            <div id="audio-info2">
+              <span class="artist2"></span> - <span class="title2"></span>
+            </div>
+            <div class="vol2">
+              <img src="images/volume.jpg" class="volume2">
+              <input id="volume2" type="range" min="0" max="10" value="5" />
+            </div>
+            <br>
+            <div id="buttons2">
+              <span>
+			          <button id="prev2"></button>
+          			<button id="play2"></button>
+          			<button id="pause2"></button>
+          			<button id="stop2"></button>
+          			<button id="next2"></button>
+			        </span>
+            </div>
+            <div class="clearfix2"></div>
+            <div id="tracker2">
+              <div id="progressBar2">
+                <span id="progress2"></span>
+              </div>
+              <span id="duration2"></span>
+            </div>
+            <div class="clearfix2"></div>
+            <ul id="playlist2">
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <button type="button" class="btn btn-danger returnButton2 center-block">Return</button>
+          </div>
+        </div>
+        <!--end option2-->
+      </div>
+    </div>
+  </div>
+
+
+  <!--footer-->
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="text-center center-block">Copyright 2017 &copy; Music App</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--end footer-->
+
+</body>
+<!-- Latest compiled JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+</html>
