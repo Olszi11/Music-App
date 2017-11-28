@@ -332,10 +332,11 @@ $(function() {
       });
     }
 
+    returnButton2.unbind('click');
     returnButton2.on("click", function() {
-      audio.pause();
-      audio.remove();
-      audio.currentTime = 0;
+      audio2.pause();
+      audio2.remove();
+      audio2.currentTime = 0;
       $('#pause2').hide();
       $('#play2').show();
       $('#play2').unbind('click');
