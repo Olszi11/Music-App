@@ -11,7 +11,9 @@ $(function() {
   var playlist = $("#playlist");
   var playlist2 = $("#playlist2");
 
+
   option1.on("click", function() {
+
     option1Page.css('display', "block");
     option2Page.css('display', "none");
     mainPage.css('display', "none");
@@ -42,9 +44,10 @@ $(function() {
     function initAudio(element) {
       var song = element.attr('song');
       var titleLength = element.text().length;
-      var title = element.text().substring(3,titleLength);
+      var title = element.text().substring(3, titleLength);
       var cover = element.attr('cover');
       var artist = element.attr('artist');
+
 
       //Create a New Audio Object
       audio = new Audio('media/' + song);
@@ -65,7 +68,7 @@ $(function() {
 
 
     //Play Button
-    $('#play').click(function() {
+    $('#play').on('click', function() {
       audio.play();
       $('#play').hide();
       $('#pause').show();
@@ -74,14 +77,14 @@ $(function() {
     });
 
     //Pause Button
-    $('#pause').click(function() {
+    $('#pause').on('click', function() {
       audio.pause();
       $('#pause').hide();
       $('#play').show();
     });
 
     //Stop Button
-    $('#stop').click(function() {
+    $('#stop').on('click', function() {
       audio.pause();
       audio.currentTime = 0;
       $('#pause').hide();
@@ -90,7 +93,7 @@ $(function() {
     });
 
     //Next Button
-    $('#next').click(function() {
+    $('#next').on('click', function() {
       audio.pause();
       var next = $('#playlist li.active').next();
       if (next.length == 0) {
@@ -102,7 +105,7 @@ $(function() {
     });
 
     //Prev Button
-    $('#prev').click(function() {
+    $('#prev').on('click', function() {
       audio.pause();
       var prev = $('#playlist li.active').prev();
       if (prev.length == 0) {
@@ -114,7 +117,7 @@ $(function() {
     });
 
     //Playlist Song Click
-    $('#playlist li').click(function() {
+    $('#playlist li').on('click', function() {
       audio.pause();
       initAudio($(this));
       $('#play').hide();
@@ -146,35 +149,41 @@ $(function() {
         }
         $('#progress').css('width', value + '%');
       });
-
-      $(audio).on("ended", function() {
-        audio.pause();
-        var next = $('#playlist li.active').next();
-        if (next.length == 0) {
-          next = $('#playlist li:first-child');
-        }
-        initAudio(next);
-        audio.play();
-        showDuration();
-      });
     }
 
+    $(audio).on("ended", function() {
+      audio.pause();
+      var next = $('#playlist li.active').next();
+      if (next.length == 0) {
+        next = $('#playlist li:first-child');
+      }
+      initAudio(next);
+      audio.play();
+      showDuration();
+    });
+
+
+    returnButton.unbind('click');
     returnButton.on("click", function() {
       audio.pause();
+      audio.remove();
       audio.currentTime = 0;
       $('#pause').hide();
       $('#play').show();
+      $('#play').unbind('click');
+      $('#pause').unbind('click');
+      $('#stop').unbind('click');
+      $('#next').unbind('click');
+      $('#prev').unbind('click');
       playlist.empty();
       playlist2.empty();
-
       mainPage.css('display', "block");
       option1Page.css('display', "none");
       option2Page.css('display', "none");
       headerH1.text("Music App");
       returnButton.css('display', "none");
       returnButton2.css('display', "none");
-    })
-
+    });
   });
 
   option2.on("click", function() {
@@ -207,7 +216,7 @@ $(function() {
     function initAudio(element) {
       var song = element.attr('song');
       var titleLength = element.text().length;
-      var title = element.text().substring(3,titleLength);
+      var title = element.text().substring(3, titleLength);
       var cover = element.attr('cover');
       var artist = element.attr('artist');
 
@@ -229,7 +238,7 @@ $(function() {
     }
 
     //Play Button
-    $('#play2').click(function() {
+    $('#play2').on("click",function() {
       audio2.play();
       $('#play2').hide();
       $('#pause2').show();
@@ -238,14 +247,14 @@ $(function() {
     });
 
     //Pause Button
-    $('#pause2').click(function() {
+    $('#pause2').on("click",function() {
       audio2.pause();
       $('#pause2').hide();
       $('#play2').show();
     });
 
     //Stop Button
-    $('#stop2').click(function() {
+    $('#stop2').on("click",function() {
       audio2.pause();
       audio2.currentTime = 0;
       $('#pause2').hide();
@@ -254,7 +263,7 @@ $(function() {
     });
 
     //Next Button
-    $('#next2').click(function() {
+    $('#next2').on("click",function() {
       audio2.pause();
       var next = $('#playlist2 li.active').next();
       if (next.length == 0) {
@@ -266,7 +275,7 @@ $(function() {
     });
 
     //Prev Button
-    $('#prev2').click(function() {
+    $('#prev2').on("click",function() {
       audio2.pause();
       var prev = $('#playlist2 li.active').prev();
       if (prev.length == 0) {
@@ -278,7 +287,7 @@ $(function() {
     });
 
     //Playlist Song Click
-    $('#playlist2 li').click(function() {
+    $('#playlist2 li').on("click",function() {
       audio2.pause();
       initAudio($(this));
       $('#play2').hide();
@@ -324,21 +333,25 @@ $(function() {
     }
 
     returnButton2.on("click", function() {
-      audio2.pause();
-      audio2.currentTime = 0;
+      audio.pause();
+      audio.remove();
+      audio.currentTime = 0;
       $('#pause2').hide();
       $('#play2').show();
-      audio2.remove();
+      $('#play2').unbind('click');
+      $('#pause2').unbind('click');
+      $('#stop2').unbind('click');
+      $('#next2').unbind('click');
+      $('#prev2').unbind('click');
+      playlist.empty();
       playlist2.empty();
-
       mainPage.css('display', "block");
       option1Page.css('display', "none");
       option2Page.css('display', "none");
       headerH1.text("Music App");
       returnButton2.css('display', "none");
       returnButton.css('display', "none");
-    })
-
+    });
   });
 
 });
