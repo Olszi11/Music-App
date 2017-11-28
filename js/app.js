@@ -195,7 +195,7 @@ $(function() {
     playlist2.append('<li song="Lemon Yellow Hayes - Rumplestilskin.mp3" cover="cover1.jpg" artist="Lemon Yellow Hayes">6. Rumplestilskin</li>');
     playlist2.append('<li song="Lemon Yellow Hayes - Something Part I.mp3" cover="cover1.jpg" artist="Lemon Yellow Hayes">7. Something Part I</li>');
     playlist2.append('<li song="Lemon Yellow Hayes - Something Part II.mp3" cover="cover1.jpg" artist="Lemon Yellow Hayes">8. Something Part II</li>');
-    playlist2.append('<li song="Lemon Yellow Hayes - Waiting bt Counting to Three.mp3" cover="cover1.jpg" artist="Lemon Yellow Hayes">9. Waiting bt Counting to Three</li>');
+    playlist2.append('<li song="Lemon Yellow Hayes - Waiting by Counting to Three.mp3" cover="cover1.jpg" artist="Lemon Yellow Hayes">9. Waiting by Counting to Three</li>');
 
     var audio2;
 
