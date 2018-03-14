@@ -34,7 +34,7 @@ $(function() {
     playlist.append('<li song="Scott Holmes - When Im with you.mp3" cover="cover1.jpg" artist="Scott Holmes">9. When Im with you</li>');
 
 
-    let audio;
+    var audio;
     //Hide Pause Initially
     $('#pause').hide();
 
@@ -42,11 +42,11 @@ $(function() {
     initAudio($('#playlist li:first-child'));
 
     function initAudio(element) {
-      let song = element.attr('song');
-      let titleLength = element.text().length;
-      let title = element.text().substring(3, titleLength);
-      let cover = element.attr('cover');let
-      let artist = element.attr('artist');
+      var song = element.attr('song');
+      var titleLength = element.text().length;
+      var title = element.text().substring(3, titleLength);
+      var cover = element.attr('cover');
+      var artist = element.attr('artist');
 
 
       //Create a New Audio Object
@@ -95,7 +95,7 @@ $(function() {
     //Next Button
     $('#next').on('click', function() {
       audio.pause();
-      let next = $('#playlist li.active').next();
+      var next = $('#playlist li.active').next();
       if (next.length == 0) {
         next = $('#playlist li:first-child');
       }
@@ -107,7 +107,7 @@ $(function() {
     //Prev Button
     $('#prev').on('click', function() {
       audio.pause();
-      let prev = $('#playlist li.active').prev();
+      var prev = $('#playlist li.active').prev();
       if (prev.length == 0) {
         prev = $('#playlist li:last-child');
       }
@@ -136,14 +136,14 @@ $(function() {
     function showDuration() {
       $(audio).bind('timeupdate', function() {
         //Get hours and minutes
-        let s = parseInt(audio.currentTime % 60);
-        let m = parseInt((audio.currentTime / 60) % 60);
+        var s = parseInt(audio.currentTime % 60);
+        var m = parseInt((audio.currentTime / 60) % 60);
         //Add 0 if seconds less than 10
         if (s < 10) {
           s = '0' + s;
         }
         $('#duration').html(m + '.' + s);
-        let value = 0;
+        var value = 0;
         if (audio.currentTime > 0) {
           value = Math.floor((100 / audio.duration) * audio.currentTime);
         }
@@ -153,7 +153,7 @@ $(function() {
 
     $(audio).on("ended", function() {
       audio.pause();
-      let next = $('#playlist li.active').next();
+      var next = $('#playlist li.active').next();
       if (next.length == 0) {
         next = $('#playlist li:first-child');
       }
@@ -206,7 +206,7 @@ $(function() {
     playlist2.append('<li song="Lemon Yellow Hayes - Something Part II.mp3" cover="cover1.jpg" artist="Lemon Yellow Hayes">8. Something Part II</li>');
     playlist2.append('<li song="Lemon Yellow Hayes - Waiting by Counting to Three.mp3" cover="cover1.jpg" artist="Lemon Yellow Hayes">9. Waiting by Counting to Three</li>');
 
-    let audio2;
+    var audio2;
 
     //Hide Pause Initially
     $('#pause2').hide();
@@ -214,11 +214,11 @@ $(function() {
     initAudio($('#playlist2 li:first-child'));
 
     function initAudio(element) {
-      let song = element.attr('song');
-      let titleLength = element.text().length;
-      let title = element.text().substring(3, titleLength);
-      let cover = element.attr('cover');
-      let artist = element.attr('artist');
+      var song = element.attr('song');
+      var titleLength = element.text().length;
+      var title = element.text().substring(3, titleLength);
+      var cover = element.attr('cover');
+      var artist = element.attr('artist');
 
       //Create a New Audio Object
       audio2 = new Audio('media/' + song);
@@ -265,7 +265,7 @@ $(function() {
     //Next Button
     $('#next2').on("click",function() {
       audio2.pause();
-      let next = $('#playlist2 li.active').next();
+      var next = $('#playlist2 li.active').next();
       if (next.length == 0) {
         next = $('#playlist2 li:first-child');
       }
@@ -277,7 +277,7 @@ $(function() {
     //Prev Button
     $('#prev2').on("click",function() {
       audio2.pause();
-      let prev = $('#playlist2 li.active').prev();
+      var prev = $('#playlist2 li.active').prev();
       if (prev.length == 0) {
         prev = $('#playlist2 li:last-child');
       }
@@ -306,14 +306,14 @@ $(function() {
     function showDuration() {
       $(audio2).bind('timeupdate', function() {
         //Get hours and minutes
-        let s = parseInt(audio2.currentTime % 60);
-        let m = parseInt((audio2.currentTime / 60) % 60);
+        var s = parseInt(audio2.currentTime % 60);
+        var m = parseInt((audio2.currentTime / 60) % 60);
         //Add 0 if seconds less than 10
         if (s < 10) {
           s = '0' + s;
         }
         $('#duration2').html(m + '.' + s);
-        let value = 0;
+        var value = 0;
         if (audio2.currentTime > 0) {
           value = Math.floor((100 / audio2.duration) * audio2.currentTime);
         }
@@ -322,7 +322,7 @@ $(function() {
 
       $(audio2).on("ended", function() {
         audio2.pause();
-        let next = $('#playlist2 li.active').next();
+        var next = $('#playlist2 li.active').next();
         if (next.length == 0) {
           next = $('#playlist2 li:first-child');
         }
